@@ -3,9 +3,10 @@ from ubuntu:latest
 
 # Update packages and install Python, pip, and Git
 run apt-get update && apt-get install -y \
-    python3.10 \         # Python interpreter
-    python3-pip \        # Python package manager
-    git                  # Version control system
+    python3.10 \         
+    python3-pip \        
+    git                  
+# Python interpreter, python package manager, and version cntrol system
 
 # Install the PyYAML library using pip
 run pip3 install PyYAML
