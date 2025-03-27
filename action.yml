@@ -1,0 +1,30 @@
+# The display name for your GitHub Action (shown in the Marketplace or workflows)
+name: "Podcast Generator"
+
+# The author of this GitHub Action
+author: "Ray Villalobos"
+
+# A short description of what this Action does
+description: "Generates a feed for podcast from a YAML file"
+
+# This section defines how the action is executed
+runs:
+  using: "docker"
+  image: "Dockerfile"     # Tells GitHub to build and run the Dockerfile in this repo
+
+# Custom branding for when this Action is published to the Marketplace
+branding:
+  icon: "git-branch"      # Icon shown in the GitHub Actions UI
+  color: "red"            # Color used for the action badge (e.g., 'red', 'blue', etc.)
+
+# Define inputs that users (or calling workflows) can provide
+inputs:
+  email:
+    description: The committer's email address
+    required: true
+    default: ${{ github.actor }}@localhost
+
+  name:
+    description: The committer's name
+    required: true
+    default: ${{ github.actor }}
